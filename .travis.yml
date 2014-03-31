@@ -1,0 +1,11 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+install:
+  - "pip install -r requirements.txt --use-wheel"
+  - "pip install coveralls --use-wheel"
+script:
+  - coverage run --source=txtesthelpers `which trial` txtesthelpers
+after_success:
+  - coveralls
